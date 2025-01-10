@@ -553,3 +553,14 @@ video {
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
+
+@font-face {
+  font-family: 'AppleSDGothicNeoM';
+  src: url('src/shared/assets/fonts/AppleSDGothicNeoM.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  font-family: 'AppleSDGothicNeoM', sans-serif;
+}

@@ -1,10 +1,9 @@
 import './App.css'
+import MainPage from "./pages/MainPage/index.jsx";
 
 function App() {
   return (
-      <>
-      <h1>신진호다.</h1>
-      </>
+      <MainPage />
   )
 }
 
