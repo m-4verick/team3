@@ -27,8 +27,10 @@ export default function ShinJinHoPage() {
                         수 있을지에 대한 누리꾼들 사이의 의견이 분분한 가운데 그는 새로운 출사표를 던졌다.</p>
                     <p>"고수가 되겠다." 앞으로의 그의 귀추가 주목된다. [UP 신진현 기자]</p>
                 </div>
-                <div>
-                <img src={me} className="w-[600px] rounded"/>
+                <div className="flex flex-col items-center">
+                    <img src={me} className="w-[600px] rounded"/>
+                    <p>신진호 (25세)</p>
+                    <p>밤샘 코딩으로 인해 지친 모습이다.</p>
                 </div>
             </div>
             <div className="flex w-full px-5 gap-5">
