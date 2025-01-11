@@ -4,10 +4,18 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        apple: ['AppleSDGothicNeoM', 'sans-serif'],
+        apple: ["AppleSDGothicNeoM", "sans-serif"],
+      },
+      keyframes: {
+        loading: {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
+        },
+      },
+      animation: {
+        loading: "loading 2.5s linear",
       },
     },
   },
   plugins: [],
-}
-
+};

@@ -1,10 +1,16 @@
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import SplashPage from "./pages/SplashPage/SplashPage.jsx";
 import MainPage from "./pages/MainPage/index.jsx";
 
 function App() {
-  return (
-      <MainPage />
-  )
+  const [bootCompleted, setBootCompleted] = useState(false);
+  console.log(bootCompleted);
+  return bootCompleted ? (
+    <MainPage />
+  ) : (
+    <SplashPage onBootComplete={() => setBootCompleted(true)} />
+  );
 }
 
-export default App
+export default App;
