@@ -24,7 +24,7 @@ export default function Window({children, width = 1100, height = 700}) {
                 <button className="rounded-full w-3 h-3 bg-[#FEBC2E] border border-[#000000] border-opacity-5"></button>
                 <button className="rounded-full w-3 h-3 bg-[#28C840] border border-[#000000] border-opacity-5"></button>
             </div>
-            <div className="p-3"
+            <div
                  style={{
                      width: `${width - 3}px`,
                      height: `${height - 60}px`,
