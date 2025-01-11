@@ -101,6 +101,7 @@ export default function Window({ children }) {
           overflowWrap: "break-word",
           wordWrap: "break-word",
           overflowY: "auto",
+          maxHeight: "calc(86%)", // 헤더 높이를 제외한 최대 높이 설정
         }}
       >
         {children}

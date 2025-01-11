@@ -1,24 +1,49 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { NavermapsProvider } from "react-naver-maps";
+
 import Background from "./components/Background.jsx";
 import Navbar from "../../shared/components/Navbar.jsx";
 import Dock from "./components/Dock.jsx";
-import { NaverMapsProvider } from "react-naver-maps";
-
-// import ShinJinHoPage from "../ShinJinHoPage/index.jsx";
 import Window from "../../shared/components/Window.jsx";
+
+import SafariPage from "../../pages/basic-apps/SafariPage";
+import MemoPage from "../../pages/basic-apps/MemoPage";
+import MapPage from "../../pages/basic-apps/MapPage";
+import DictionaryPage from "../../pages/basic-apps/DictionaryPage";
+import ShinJinHoPage from "../../pages/ShinJinHoPage";
+import KimMinHeePage from "../../pages/KimMinHeePage";
+import KimSeungWooPage from "../../pages/KimSeungWooPage";
+import MinJiYoungPage from "../../pages/MinJiYeongPage";
+import KimHeeSeongPage from "../../pages/KimHeeSeongPage";
 
 export default function MainPage() {
   return (
-    <NaverMapsProvider
-      ncpClientId="fpjyy01mcj"
-      // or finClientId, govClientId
-    >
-      <Background>
-        <Navbar />
+    <BrowserRouter>
+      <NavermapsProvider
+        ncpClientId="fpjyy01mcj"
+        // or finClientId, govClientId
+      >
+        <Background>
+          <Navbar />
 
-        <Window></Window>
+          <Window>
+            <Routes>
+              <Route path="/" element={<ShinJinHoPage />} />
+              <Route path="/safari" element={<SafariPage />} />
+              <Route path="/memo" element={<MemoPage />} />
+              <Route path="/maps" element={<MapPage />} />
+              <Route path="/dictionary" element={<DictionaryPage />} />
+              <Route path="/sjh" element={<ShinJinHoPage />} />
+              <Route path="/kmh" element={<KimMinHeePage />} />
+              <Route path="/ksw" element={<KimSeungWooPage />} />
+              <Route path="/mjy" element={<MinJiYoungPage />} />
+              <Route path="/khs" element={<KimHeeSeongPage />} />
+            </Routes>
+          </Window>
 
-        <Dock />
-      </Background>
-    </NaverMapsProvider>
+          <Dock />
+        </Background>
+      </NavermapsProvider>
+    </BrowserRouter>
   );
 }
