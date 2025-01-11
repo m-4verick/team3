@@ -17,7 +17,6 @@ export default function Window({ children }) {
       x: e.clientX - position.x,
       y: e.clientY - position.y,
     });
-    windowRef.current.setPointerCapture(e.pointerId);
   };
 
   const handleMouseMove = (e) => {
@@ -28,8 +27,6 @@ export default function Window({ children }) {
 
       let newX = e.clientX - dragStart.x;
       let newY = e.clientY - dragStart.y;
-
-      // Window 컴포넌트를 부모 요소 내부로 제한
 
       // 마우스 포인터를 부모 요소 내부로 제한
       if (e.clientX < parentRect.left) newX = 0;
@@ -45,9 +42,8 @@ export default function Window({ children }) {
     }
   };
 
-  const handleMouseUp = (e) => {
+  const handleMouseUp = () => {
     setIsDragging(false);
-    windowRef.current.releasePointerCapture(e.pointerId);
   };
 
   // 초기화면 위치 설정
@@ -85,11 +81,10 @@ export default function Window({ children }) {
         height: "75%",
         left: `${position.x}px`,
         top: `${position.y}px`,
-        position: "absolute",
       }}
     >
       <div
-        className="w-full h-[50px] bg-[#E5E5E5] bg-opacity-50 border border-[#4D4D4D] rounded-t-xl border-opacity-10 flex gap-2 items-center px-5 cursor-move"
+        className="w-full h-[50px] bg-[#E5E5E5] bg-opacity-50 border border-[#4D4D4D] rounded-t-xl border-opacity-10 flex gap-2 items-center px-5 cursor-pointer"
         onMouseDown={handleMouseDown}
       >
         <button
