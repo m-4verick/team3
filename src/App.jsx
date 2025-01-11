@@ -5,8 +5,8 @@ import MainPage from "./pages/MainPage/index.jsx";
 
 function App() {
   const [bootCompleted, setBootCompleted] = useState(false);
-  console.log(bootCompleted);
-  return bootCompleted ? (
+
+  return  bootCompleted ? (
     <MainPage />
   ) : (
     <SplashPage onBootComplete={() => setBootCompleted(true)} />

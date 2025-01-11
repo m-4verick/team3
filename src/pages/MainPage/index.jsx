@@ -1,37 +1,41 @@
 import Background from "./components/Background.jsx";
-import Navbar from "./components/Navbar.jsx";
+import Navbar from "../../shared/components/Navbar.jsx";
 import Dock from "./components/Dock.jsx";
 import memo from '../../shared/assets/memo.png';
 import map from '../../shared/assets/map.png';
 import safari from '../../shared/assets/safari.png';
-import Window from "./components/Window.jsx";
-import books from '../../shared/assets/books.png';
 import dictionary from '../../shared/assets/dictionary.png';
 import Icon from "./components/Icon.jsx";
 import sample from '../../shared/assets/sample-icon.png';
+import {NavermapsProvider} from "react-naver-maps";
+import maverick from '../../shared/assets/maverick.png';
+import ShinJinHoPage from "../ShinJinHoPage/index.jsx";
 
 export default function MainPage() {
 
     return (
-        <Background>
-            <Navbar/>
+        <NavermapsProvider
+            ncpClientId='fpjyy01mcj'
+            // or finClientId, govClientId
+        >
+            <Background>
+                <Navbar/>
 
-            <Window>
-                <h1>하이하이</h1>
-            </Window>
+                <ShinJinHoPage/>
 
-            <Dock>
-                <Icon image={safari}/>
-                <Icon image={memo}/>
-                <Icon image={map}/>
-                <Icon image={dictionary}/>
-                <Icon image={books}/>
-                <Icon image={sample}/>
-                <Icon image={sample}/>
-                <Icon image={sample}/>
-                <Icon image={sample}/>
-                <Icon image={sample}/>
-            </Dock>
-        </Background>
+
+                <Dock>
+                    <Icon image={safari} label="사파리"/>
+                    <Icon image={memo} label="메모"/>
+                    <Icon image={map} label="지도"/>
+                    <Icon image={dictionary} label="영어사전"/>
+                    <Icon image={maverick} label="신진호"/>
+                    <Icon image={sample} label="김민희"/>
+                    <Icon image={sample} label="김승우"/>
+                    <Icon image={sample} label="민지영"/>
+                    <Icon image={sample} label="김희성"/>
+                </Dock>
+            </Background>
+        </NavermapsProvider>
     )
 }

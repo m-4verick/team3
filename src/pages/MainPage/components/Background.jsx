@@ -1,10 +1,10 @@
 import wallpaper from '../../../shared/assets/wallpaper.png';
 
-export default function Background({children}) {
+export default function Background({children, background = wallpaper}) {
     return (
         <div
             style={{
-                backgroundImage: `url(${wallpaper})`,
+                backgroundImage: `url(${background})`,
                 backgroundPosition: "center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",

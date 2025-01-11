@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 
-export function useTimer() {
+export default function useTimer() {
     const [time, setTime] = useState('');
 
     useEffect(() => {
@@ -17,7 +17,7 @@ export function useTimer() {
             setTime(formattedTime);
         }, 1000);
 
-        return () => clearInterval(intervalId);
+        return () => clearInterval(intervalId); // 컴포넌트 언마운트 시 인터벌 클리어
     }, []);
 
     return time;

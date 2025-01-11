@@ -1,6 +1,12 @@
 
-export default function Icon({ image }) {
+export default function Icon({ image, label }) {
     return (
-        <img src={image} className="hover:scale-110 transition cursor-pointer" />
+        <div className="relative inline-block group">
+            <div
+                className="absolute top-[-40px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition bg-white bg-opacity-30 text-[#000000] text-opacity-70 px-2 py-0.5 rounded whitespace-nowrap">
+                {label}
+            </div>
+            <img src={image} className="h-full hover:scale-110 transition cursor-pointer"/>
+        </div>
     )
 }
