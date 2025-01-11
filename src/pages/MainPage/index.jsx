@@ -1,14 +1,14 @@
 import Background from "./components/Background.jsx";
 import Navbar from "../../shared/components/Navbar.jsx";
 import Dock from "./components/Dock.jsx";
-import { NavermapsProvider } from "react-naver-maps";
+import { NaverMapsProvider } from "react-naver-maps";
 
 // import ShinJinHoPage from "../ShinJinHoPage/index.jsx";
 import Window from "../../shared/components/Window.jsx";
 
 export default function MainPage() {
   return (
-    <NavermapsProvider
+    <NaverMapsProvider
       ncpClientId="fpjyy01mcj"
       // or finClientId, govClientId
     >
@@ -19,6 +19,6 @@ export default function MainPage() {
 
         <Dock />
       </Background>
-    </NavermapsProvider>
+    </NaverMapsProvider>
   );
 }
