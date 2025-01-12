@@ -1,5 +1,4 @@
 import Icon from "./Icon";
-import memoIcon from "../../../shared/assets/memo.png";
 import mapIcon from "../../../shared/assets/map.png";
 import safariIcon from "../../../shared/assets/safari.png";
 import dictionaryIcon from "../../../shared/assets/dictionary.png";
@@ -9,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 
 const DOCK_LIST = {
   SAFARI: { image: safariIcon, label: "사파리", path: "/safari" },
-  MEMO: { image: memoIcon, label: "메모", path: "/memo" },
   MAP: { image: mapIcon, label: "지도", path: "/maps" },
   DICTIONARY: { image: dictionaryIcon, label: "영어사전", path: "/dictionary" },
   SJH: { image: maverick, label: "신진호", path: "/sjh" },

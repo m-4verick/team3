@@ -7,7 +7,6 @@ import Dock from "./components/Dock.jsx";
 import Window from "../../shared/components/Window.jsx";
 
 import SafariPage from "../../pages/basic-apps/SafariPage";
-import MemoPage from "../../pages/basic-apps/MemoPage";
 import MapPage from "../../pages/basic-apps/MapPage";
 import DictionaryPage from "../../pages/basic-apps/DictionaryPage";
 import ShinJinHoPage from "../../pages/ShinJinHoPage";
@@ -30,7 +29,6 @@ export default function MainPage() {
             <Routes>
               <Route path="/" element={<ShinJinHoPage />} />
               <Route path="/safari" element={<SafariPage />} />
-              <Route path="/memo" element={<MemoPage />} />
               <Route path="/maps" element={<MapPage />} />
               <Route path="/dictionary" element={<DictionaryPage />} />
               <Route path="/sjh" element={<ShinJinHoPage />} />

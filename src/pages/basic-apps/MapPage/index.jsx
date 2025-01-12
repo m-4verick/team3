@@ -1,18 +1,19 @@
 import { Container as MapDiv } from "react-naver-maps";
-import AppWindow from "../../../shared/components/AppWindow.jsx";
 import { MyMap } from "./components/Map.jsx";
+import SearchHeader from "../../../shared/components/SearchHeader.jsx";
 
 export default function MapPage() {
   return (
-    <AppWindow title="지도">
+      <>
+          <SearchHeader title="현피 지도"/>
       <MapDiv
         style={{
           width: "100%",
-          height: "525px",
+          height: "500px",
         }}
       >
         <MyMap />
       </MapDiv>
-    </AppWindow>
+      </>
   );
 }
