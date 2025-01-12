@@ -15,8 +15,8 @@ const DOCK_LIST = {
   DICTIONARY: { image: dictionaryIcon, label: "영어사전", path: "/dictionary" },
   SJH: { image: maverick, label: "신진호", path: "/sjh" },
   KMH: { image: sample, label: "김민희", path: "/kmh" },
-  MJY: { image: linkedInIcon, label: "민지영", path: "/mjy" },
   KSW: { image: terminal, label: "김승우", path: "/ksw" },
+  MJY: { image: linkedInIcon, label: "민지영", path: "/mjy" },
   KHS: { image: sample, label: "김희성", path: "/khs" },
 };
 
