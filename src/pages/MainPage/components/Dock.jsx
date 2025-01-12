@@ -3,8 +3,8 @@ import mapIcon from "../../../shared/assets/map.png";
 import safariIcon from "../../../shared/assets/safari.png";
 import dictionaryIcon from "../../../shared/assets/dictionary.png";
 import maverick from "../../../shared/assets/maverick.png";
-import kakaoIcon from "../../../shared/assets/kakaotalk_macos.png";
 import terminal from "../../../shared/assets/terminalIcon.png";
+import linkedInIcon from "../../../shared/assets/mjy/linkedInLogo.png";
 import sample from "../../../shared/assets/sample-icon.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -15,8 +15,8 @@ const DOCK_LIST = {
   DICTIONARY: { image: dictionaryIcon, label: "영어사전", path: "/dictionary" },
   SJH: { image: maverick, label: "신진호", path: "/sjh" },
   KMH: { image: sample, label: "김민희", path: "/kmh" },
+  MJY: { image: linkedInIcon, label: "민지영", path: "/mjy" },
   KSW: { image: terminal, label: "김승우", path: "/ksw" },
-  MJY: { image: kakaoIcon, label: "민지영", path: "/mjy" },
   KHS: { image: sample, label: "김희성", path: "/khs" },
 };
 

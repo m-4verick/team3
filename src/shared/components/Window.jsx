@@ -1,11 +1,14 @@
 import { useState, useRef, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function Window({ children }) {
+  const location = useLocation();
   const [isVisible, setIsVisible] = useState(true);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const windowRef = useRef(null);
+  const bgColor = location.pathname === "/mjy" ? "bg-[#f4f2ee]" : "bg-white";
 
   const handleClose = () => {
     setIsVisible(false);
@@ -98,12 +101,12 @@ export default function Window({ children }) {
       </div>
 
       <div
-        className="m-5"
+        className={`${bgColor}`}
         style={{
           overflowWrap: "break-word",
           wordWrap: "break-word",
           overflowY: "auto",
-          maxHeight: "calc(86%)", // 헤더 높이를 제외한 최대 높이 설정
+          maxHeight: "calc(90%)", // 헤더 높이를 제외한 최대 높이 설정
         }}
       >
         {children}
