@@ -37,7 +37,7 @@ export default function MainPage() {
               <Route path="/khs/*" element={<KimHeeSeongPage />} />
             </Routes>
           </Window>
-          z
+
           <Dock />
         </Background>
       </NavermapsProvider>

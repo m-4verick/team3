@@ -1,11 +1,25 @@
 import { useState, useRef, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+const getBgColor = (pathname) => {
+  switch (pathname) {
+    case "/mjy":
+      return "bg-[#f4f2ee]";
+    case "/ksw":
+      return "bg-black";
+    default:
+      return "bg-white";
+  }
+};
 
 export default function Window({ children }) {
+  const location = useLocation();
   const [isVisible, setIsVisible] = useState(true);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const windowRef = useRef(null);
+  const bgColor = getBgColor(location.pathname);
 
   const handleClose = () => {
     setIsVisible(false);
@@ -75,7 +89,7 @@ export default function Window({ children }) {
   return (
     <div
       ref={windowRef}
-      className="bg-white rounded-xl shadow-xl border border-black border-opacity-10 absolute"
+      className="bg-white rounded-xl shadow-xl border border-black border-opacity-10 absolute overflow-hidden"
       style={{
         width: "80%",
         height: "75%",
@@ -84,7 +98,9 @@ export default function Window({ children }) {
       }}
     >
       <div
-        className="w-full h-[50px] bg-[#E5E5E5] bg-opacity-50 border border-[#4D4D4D] rounded-t-xl border-opacity-10 flex gap-2 items-center px-5 cursor-pointer"
+        className={`w-full h-[50px] bg-[#E5E5E5] bg-opacity-50 border border-[#4D4D4D] rounded-t-xl border-opacity-10 flex gap-2 items-center px-5 ${
+          isDragging ? "cursor-grabbing" : "cursor-grab"
+        }`}
         onMouseDown={handleMouseDown}
       >
         <button
@@ -96,12 +112,12 @@ export default function Window({ children }) {
       </div>
 
       <div
-        className="m-5"
+        className={`${bgColor} rounded-b-[12px]`}
         style={{
           overflowWrap: "break-word",
           wordWrap: "break-word",
           overflowY: "auto",
-          maxHeight: "calc(86%)", // 헤더 높이를 제외한 최대 높이 설정
+          maxHeight: "calc(75vh - 50px)", // 헤더 높이를 제외한 최대 높이 설정
         }}
       >
         {children}

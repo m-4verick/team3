@@ -76,7 +76,7 @@ export default function KimSeungWooPage() {
       case "ascii-art":
         if (args[1] === "spaceship") {
           return `
-                /\    
+                /\\    
                |==|   
                |  |   
               /____\\  
@@ -91,8 +91,8 @@ export default function KimSeungWooPage() {
   };
 
   return (
-    <div className="bg-black min-h-screen flex flex-col p-4">
-      <div className="h-full overflow-y-auto">
+    <div className="flex flex-col p-4">
+      <div className="h-full min-h-[calc(71vh-50px)] overflow-y-auto">
         {history.map((line, index) => (
           <div key={index} className=" whitespace-pre-line text-white">
             {line}

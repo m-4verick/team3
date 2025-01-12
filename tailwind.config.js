@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import aspectRatio from "@tailwindcss/aspect-ratio";
+
 export default {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
@@ -15,7 +17,10 @@ export default {
       animation: {
         loading: "loading 2.5s linear",
       },
+      aspectRatio: {
+        "16/9": "16 / 9",
+      },
     },
   },
-  plugins: [],
+  plugins: [aspectRatio],
 };
