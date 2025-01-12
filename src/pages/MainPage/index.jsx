@@ -24,7 +24,6 @@ export default function MainPage() {
       >
         <Background>
           <Navbar />
-
           <Window>
             <Routes>
               <Route path="/" element={<ShinJinHoPage />} />
@@ -35,10 +34,10 @@ export default function MainPage() {
               <Route path="/kmh" element={<KimMinHeePage />} />
               <Route path="/ksw" element={<KimSeungWooPage />} />
               <Route path="/mjy" element={<MinJiYoungPage />} />
-              <Route path="/khs" element={<KimHeeSeongPage />} />
+              <Route path="/khs/*" element={<KimHeeSeongPage />} />
             </Routes>
           </Window>
-
+          z
           <Dock />
         </Background>
       </NavermapsProvider>
