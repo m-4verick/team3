@@ -1,6 +1,17 @@
 import { useState, useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+const getBgColor = (pathname) => {
+  switch (pathname) {
+    case "/mjy":
+      return "bg-[#f4f2ee]";
+    case "/ksw":
+      return "bg-black";
+    default:
+      return "bg-white";
+  }
+};
+
 export default function Window({ children }) {
   const location = useLocation();
   const [isVisible, setIsVisible] = useState(true);
@@ -8,7 +19,7 @@ export default function Window({ children }) {
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const windowRef = useRef(null);
-  const bgColor = location.pathname === "/mjy" ? "bg-[#f4f2ee]" : "bg-white";
+  const bgColor = getBgColor(location.pathname);
 
   const handleClose = () => {
     setIsVisible(false);
@@ -106,7 +117,7 @@ export default function Window({ children }) {
           overflowWrap: "break-word",
           wordWrap: "break-word",
           overflowY: "auto",
-          maxHeight: "calc(92.3 %)", // 헤더 높이를 제외한 최대 높이 설정
+          maxHeight: "calc(75vh - 50px)", // 헤더 높이를 제외한 최대 높이 설정
         }}
       >
         {children}
