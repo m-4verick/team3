@@ -42,7 +42,7 @@ export default function MinJiYeongPage() {
   return (
     <section className="relative">
       <Header />
-      <main className="w-full flex flex-col justify-center items-center relative">
+      <main className="w-full py-[40px] flex flex-col justify-center items-center relative">
         <Profile />
 
         <ProfileBox title="경력 사항">

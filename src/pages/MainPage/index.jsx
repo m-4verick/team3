@@ -14,8 +14,11 @@ import KimMinHeePage from "../../pages/KimMinHeePage";
 import KimSeungWooPage from "../../pages/KimSeungWooPage";
 import MinJiYoungPage from "../../pages/MinJiYeongPage";
 import KimHeeSeongPage from "../../pages/KimHeeSeongPage";
+import { useState } from "react";
 
 export default function MainPage() {
+  const [isOpenWindow, setIsOpenWindow] = useState(false);
+
   return (
     <BrowserRouter>
       <NavermapsProvider
@@ -24,9 +27,9 @@ export default function MainPage() {
       >
         <Background>
           <Navbar />
-          <Window>
+          <Window isOpenWindow={isOpenWindow} setIsOpenWindow={setIsOpenWindow}>
             <Routes>
-              <Route path="/" element={<ShinJinHoPage />} />
+              <Route path="/" element={<MapPage />} />
               <Route path="/safari" element={<SafariPage />} />
               <Route path="/maps" element={<MapPage />} />
               <Route path="/dictionary" element={<DictionaryPage />} />
@@ -38,7 +41,7 @@ export default function MainPage() {
             </Routes>
           </Window>
 
-          <Dock />
+          <Dock isOpenWindow={isOpenWindow} setIsOpenWindow={setIsOpenWindow} />
         </Background>
       </NavermapsProvider>
     </BrowserRouter>

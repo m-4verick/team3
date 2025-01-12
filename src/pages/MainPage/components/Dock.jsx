@@ -21,11 +21,15 @@ const DOCK_LIST = {
   KHS: { image: sample, label: "김희성", path: "/khs" },
 };
 
-export default function Dock() {
+export default function Dock({ isOpenWindow, setIsOpenWindow }) {
   const [activeKey, setActiveKey] = useState(null);
   const nav = useNavigate();
 
   // isActive 불린값을 const로 빼고 불린값을 정하게 리펙토링
+
+  const openWindow = () => {
+    if (!isOpenWindow) setIsOpenWindow(true);
+  };
 
   return (
     <div className="z-30 fixed bottom-0 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-30 border border-[#1A1A1A] border-opacity-10 mb-2 rounded-2xl p-1">
@@ -35,8 +39,9 @@ export default function Dock() {
             key={key}
             image={dock.image}
             label={dock.label}
-            isActive={activeKey === key}
+            isActive={activeKey === key && isOpenWindow}
             onClick={() => {
+              openWindow();
               setActiveKey(key);
               nav(dock.path);
             }}
