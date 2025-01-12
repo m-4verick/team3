@@ -23,8 +23,8 @@ export default function KimMinHeePage() {
 
   return (
     <>
-      <div className="px-6 relative">
-        <div className="mb-4">
+      <div className="px-8 py-5 relative">
+        <div className="mb-8">
           <h2 className="text-3xl font-bold leading-loose">안녕하세요!</h2>
           <div className="flex flex-col gap-4">
             <p>
@@ -36,7 +36,7 @@ export default function KimMinHeePage() {
             <p>
               <span className="font-black">회계학 전공</span> 출신입니다. 대학
               재학 시절 컴퓨터공학 복수전공을 하지 않은 것에 대한 미련이 남아,
-              현재
+              현재&nbsp;
               <span className="font-black">방송통신대학교 컴퓨터과학과</span>에
               재학 중입니다. 이번 학기에 컴퓨터구조 A+, 자료구조 A0 받았습니당
               <span className="text-gray-400">(나머지는...쉿)</span>
@@ -66,7 +66,7 @@ export default function KimMinHeePage() {
             </p>
           </div>
         </div>
-        <div className="mt-4 mb-4">
+        <div className="mt-4 mb-8">
           <h2 className="text-3xl font-bold leading-loose">나의 프로젝트</h2>
           <div className="flex flex-row gap-4">
             {projects.map((project) => (
@@ -80,7 +80,7 @@ export default function KimMinHeePage() {
             ))}
           </div>
         </div>
-        <div className="mt-4 mb-4">
+        <div className="mt-4 mb-8">
           <h2 className="text-3xl font-bold leading-loose">
             최근 즐겨찾는 콘텐츠
           </h2>
