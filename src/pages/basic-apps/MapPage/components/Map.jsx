@@ -28,10 +28,10 @@ export function MyMap() {
     const navermaps = useNavermaps()
 
     const jinho = new navermaps.LatLng(37.653251, 126.895357)
-    const jiyeong = new navermaps.LatLng(35.1797865, 129.0750194)
-    const seungwoo = new navermaps.LatLng(35.1797865, 129.0750194)
-    const minhee = new navermaps.LatLng(35.1797865, 129.0750194)
-    const heeseong = new navermaps.LatLng(35.1797865, 129.0750194)
+    const jiyeong = new navermaps.LatLng(37.5044, 127.0878)
+    const seungwoo = new navermaps.LatLng(37.493737, 127.071019)
+    const minhee = new navermaps.LatLng(37.602702, 127.079290)
+    const heeseong = new navermaps.LatLng(37.602971, 126.868821)
 
     const [map, setMap] = useState(null)
 
