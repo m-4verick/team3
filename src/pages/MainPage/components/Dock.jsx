@@ -5,6 +5,7 @@ import dictionaryIcon from "../../../shared/assets/dictionary.png";
 import maverick from "../../../shared/assets/maverick.png";
 import sample from "../../../shared/assets/sample-icon.png";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const DOCK_LIST = {
   SAFARI: { image: safariIcon, label: "사파리", path: "/safari" },
@@ -18,7 +19,10 @@ const DOCK_LIST = {
 };
 
 export default function Dock() {
+  const [activeKey, setActiveKey] = useState(null);
   const nav = useNavigate();
+
+  // isActive 불린값을 const로 빼고 불린값을 정하게 리펙토링
 
   return (
     <div className="z-30 fixed bottom-0 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-30 border border-[#1A1A1A] border-opacity-10 mb-2 rounded-2xl p-1">
@@ -28,7 +32,11 @@ export default function Dock() {
             key={key}
             image={dock.image}
             label={dock.label}
-            onClick={() => nav(dock.path)}
+            isActive={activeKey === key}
+            onClick={() => {
+              setActiveKey(key);
+              nav(dock.path);
+            }}
           />
         ))}
       </div>
