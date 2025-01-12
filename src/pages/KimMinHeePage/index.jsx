@@ -7,20 +7,8 @@ import theVolunteersLImg from "../../shared/assets/mnk/theVolunteers_L.png";
 import mudoTenPointImg from "../../shared/assets/mnk/mudo_tenpoint.png";
 import { gradient } from "./components/gradientStyle.js";
 import { useState, useEffect } from "react";
-import axios from "axios";
 
 export default function KimMinHeePage() {
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    async function getProjects() {
-      const res = await axios.get(`https://api.github.com/users/smnhree/repos`);
-      const data = res.data;
-      setProjects(data);
-    }
-    getProjects();
-  }, []);
-
   return (
     <>
       <div className="px-8 py-5 relative">
@@ -61,23 +49,9 @@ export default function KimMinHeePage() {
               </span>
               저 또한 개성있는 사람이 되고 싶고, 저의 취향을 소중히 여기려고
               합니다. 그래서 사람들 각자의 취향을 공유하고 소개할 수 있는
-              무언가를 만들어 보고 싶기도 하네요✨ 그런 의미로 맨 하단에
-              간단하게 요즘 제가 즐겨찾는 콘텐츠들을 소개합니다.
+              무언가를 만들어 보고 싶기도 하네요✨ 그런 의미로 하단에 간단하게
+              요즘 제가 즐겨찾는 콘텐츠들을 소개합니다.
             </p>
-          </div>
-        </div>
-        <div className="mt-4 mb-8">
-          <h2 className="text-3xl font-bold leading-loose">나의 프로젝트</h2>
-          <div className="flex flex-row gap-4">
-            {projects.map((project) => (
-              <SquareCard2
-                key={project.id}
-                largeText={project.name}
-                smallText={project.description}
-                gradientColor={gradient.lightGray}
-                link={project.html_url}
-              />
-            ))}
           </div>
         </div>
         <div className="mt-4 mb-8">
@@ -115,7 +89,7 @@ export default function KimMinHeePage() {
             />
             <SquareCard
               largeText={`무한도전`}
-              smallText={"2025. 4. 23. 첫 방송 20주년 🎉"}
+              smallText={"2025. 4. 23. 첫 방송 20주년"}
               imgSrc={mudoTenPointImg}
               gradientColor={gradient.yellow}
               link="https://youtube.com/@5minstealer?si=9WoYIU01JRLZs9Rj"
