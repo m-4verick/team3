@@ -1,4 +1,3 @@
-import AppWindow from "../../shared/components/AppWindow.jsx";
 import Circle from "./components/Circle.jsx";
 import SquareCard from "./components/SquareCard.jsx";
 import friendsImg from "./assets/friends.png";
@@ -14,9 +13,9 @@ export default function KimMinHeePage() {
     setIsOpenAlert((prev) => !prev);
   }, [isOpenAlert]);
   return (
-    <AppWindow title="김민희(Kim Minhee)">
-      <div className="px-6">
-        <div className="mt-4 mb-4">
+    <>
+      <div className="px-6 relative">
+        <div className="mb-4">
           <h2 className="text-3xl font-bold leading-loose">안녕하세요!</h2>
           <div className="flex flex-col gap-4">
             <p>
@@ -58,12 +57,6 @@ export default function KimMinHeePage() {
           </div>
         </div>
         <div className="mt-4 mb-4">
-          <h2 className="text-3xl font-bold leading-loose">소속 커뮤니티</h2>
-          <div className="flex flex-row gap-4">
-            <Circle emoji="⌨️" title="team3" />
-          </div>
-        </div>
-        <div className="mt-4 mb-4">
           <h2 className="text-3xl font-bold leading-loose">
             최근 즐겨찾는 콘텐츠
           </h2>
@@ -73,28 +66,32 @@ export default function KimMinHeePage() {
               smallText={"최근에 읽기 시작했어요"}
               imgSrc={pachinkoImg}
               gradientColor={gradient.yellowToGreen}
+              link="https://product.kyobobook.co.kr/detail/S000061450857"
             />
             <SquareCard
               largeText={"프렌즈"}
               smallText={"최애 캐릭터는 챈들러"}
               imgSrc={friendsImg}
               gradientColor={gradient.gray}
+              link="https://www.youtube.com/watch?v=s2TyVQGoCYo"
             />
             <SquareCard
               largeText={"포인트 니모"}
               smallText={"사라지는 모든 것들과 사랑"}
               imgSrc={pointnemoImg}
               gradientColor={gradient.skyToBlue}
+              link="https://www.youtube.com/watch?v=GCKSrC6XVOk"
             />
             <SquareCard
               largeText={`"L"`}
               smallText={"무대 영상이 좋아요"}
               imgSrc={theVolunteersLImg}
               gradientColor={gradient.redToYellow}
+              link="https://www.youtube.com/watch?v=lvtj-OYRQco"
             />
           </div>
         </div>
       </div>
-    </AppWindow>
+    </>
   );
 }
