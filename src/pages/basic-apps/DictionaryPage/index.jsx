@@ -1,6 +1,7 @@
 import AppWindow from "../../../shared/components/AppWindow.jsx";
 import { useState } from "react";
 import axios from "axios";
+import SearchHeader from "../../../shared/components/SearchHeader.jsx";
 
 export default function DictionaryPage() {
   const [value, setValue] = useState("");
@@ -23,12 +24,8 @@ export default function DictionaryPage() {
   };
 
   return (
-    <AppWindow
-      title="영어사전"
-      value={value}
-      onChange={handleChange}
-      onClick={handleClick}
-    >
+      <>
+        <SearchHeader title="신원스쿨 영어사전" onClick={handleClick} onChange={handleChange} value={value}/>
       <div>
         {result ? (
           <div>
@@ -53,6 +50,6 @@ export default function DictionaryPage() {
           <p>결과를 확인하려면 단어를 입력하고 검색하세요.</p>
         )}
       </div>
-    </AppWindow>
+      </>
   );
 }

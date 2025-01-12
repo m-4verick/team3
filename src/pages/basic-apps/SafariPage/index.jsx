@@ -1,7 +1,7 @@
 import youtube from "../../../shared/assets/youtube.png";
 import profileImage from "../../../shared/assets/lockprofile.png";
-import youtubeAside from '../../../shared/assets/youtubeAside.png';
-import comment from "../../../shared/assets/youtubeComment.png";
+import youtubeAside from '../../../shared/assets/jhs/youtubeAside.png';
+import comment from "../../../shared/assets/jhs/youtubeComment.png";
 
 export default function SafariPage() {
     return (
