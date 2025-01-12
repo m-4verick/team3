@@ -57,7 +57,7 @@ export default function KimMinHeePage() {
             </p>
             <p>
               <span className="font-black">
-                개개인의 취향과 개성을 존중하고 중요한 가치로 생각합니다.
+                개개인의 취향과 개성을 존중하고 중요한 가치로 생각합니다.&nbsp;
               </span>
               저 또한 개성있는 사람이 되고 싶고, 저의 취향을 소중히 여기려고
               합니다. 그래서 사람들 각자의 취향을 공유하고 소개할 수 있는
@@ -71,9 +71,10 @@ export default function KimMinHeePage() {
           <div className="flex flex-row gap-4">
             {projects.map((project) => (
               <SquareCard2
+                key={project.id}
                 largeText={project.name}
                 smallText={project.description}
-                gradientColor={gradient.pinkToPurple}
+                gradientColor={gradient.lightGray}
                 link={project.html_url}
               />
             ))}
