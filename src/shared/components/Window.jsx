@@ -78,7 +78,7 @@ export default function Window({ children }) {
   return (
     <div
       ref={windowRef}
-      className="bg-white rounded-xl shadow-xl border border-black border-opacity-10 absolute"
+      className="bg-white rounded-xl shadow-xl border border-black border-opacity-10 absolute overflow-hidden"
       style={{
         width: "80%",
         height: "75%",
@@ -101,12 +101,12 @@ export default function Window({ children }) {
       </div>
 
       <div
-        className={`${bgColor}`}
+        className={`${bgColor} rounded-b-[12px]`}
         style={{
           overflowWrap: "break-word",
           wordWrap: "break-word",
           overflowY: "auto",
-          maxHeight: "calc(90%)", // 헤더 높이를 제외한 최대 높이 설정
+          maxHeight: "calc(92.3 %)", // 헤더 높이를 제외한 최대 높이 설정
         }}
       >
         {children}
