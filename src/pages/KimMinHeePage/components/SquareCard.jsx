@@ -1,6 +1,6 @@
 export default function SquareCard({
   largeText,
-  smallText,
+  smallText = "",
   imgSrc = null,
   gradientColor,
   link,

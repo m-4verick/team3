@@ -26,7 +26,7 @@ export default function MainPage() {
           <Navbar />
           <Window>
             <Routes>
-              <Route path="/" element={<KimMinHeePage />} />
+              <Route path="/" element={<ShinJinHoPage />} />
               <Route path="/safari" element={<SafariPage />} />
               <Route path="/maps" element={<MapPage />} />
               <Route path="/dictionary" element={<DictionaryPage />} />
