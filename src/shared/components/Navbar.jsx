@@ -39,11 +39,11 @@ export default function Navbar({ isLock = false }) {
             <img src={appleLogo} />
           </button>
 
-          <div className="relative group">
+          <div className="ml-2 relative group">
             <button className="pt-1 pb-1 pl-1 pr-1">
-              <p>View</p>
+              <p className="font-bold">Github</p>
             </button>
-            <div className="bg-white min-w-[100px] w-auto h-auto pr-1 pl-1 pb-1 pt-1 z-10 bg-white rounded-md shadow-xl border border-black border-opacity-10 absolute z-50 bg-opacity-75 hidden group-hover:block transition-all delay-200 opacity-0 group-hover:opacity-100 backdrop-blur">
+            <div className="min-w-[100px] w-auto h-auto pr-1 pl-1 pb-1 pt-1 bg-white rounded-md shadow-xl border border-black border-opacity-10 absolute z-50 bg-opacity-75 hidden group-hover:block transition-all delay-200 opacity-0 group-hover:opacity-100 backdrop-blur">
               <ul className="border-b border-gray-300 pb-1">
                 <li className="whitespace-nowrap rounded-md pl-2 pr-2 hover:bg-[#007AFF] hover:text-white">
                   <a href="https://github.com/m-4verick/team3" target="_blank">
@@ -88,7 +88,7 @@ export default function Navbar({ isLock = false }) {
             <button className="pt-1 pb-1 pl-1 pr-1">
               <p>File</p>
             </button>
-            <div className="bg-white min-w-[100px] w-auto h-auto pr-1 pl-1 pb-1 pt-1 z-10 bg-white rounded-md shadow-xl border border-black border-opacity-10 absolute z-50 bg-opacity-75 hidden group-hover:block transition-all delay-200 opacity-0 group-hover:opacity-100 backdrop-blur">
+            <div className="min-w-[100px] w-auto h-auto pr-1 pl-1 pb-1 pt-1 z-10 bg-white rounded-md shadow-xl border border-black border-opacity-10 absolute z-50 bg-opacity-75 hidden group-hover:block transition-all delay-200 opacity-0 group-hover:opacity-100 backdrop-blur">
               <ul className="border-b border-gray-300 pb-1">
                 <li className="whitespace-nowrap rounded-md pl-2 pr-2 hover:bg-[#007AFF] hover:text-white">
                   <a
@@ -113,7 +113,7 @@ export default function Navbar({ isLock = false }) {
             <button className="pt-1 pb-1 pl-1 pr-1">
               <p>Edit</p>
             </button>
-            <div className="bg-white min-w-[100px] w-auto h-auto pr-1 pl-1 pb-1 pt-1 z-10 bg-white rounded-md shadow-xl border border-black border-opacity-10 absolute z-50 bg-opacity-75 hidden group-hover:block transition-all delay-200 opacity-0 group-hover:opacity-100 backdrop-blur">
+            <div className="min-w-[100px] w-auto h-auto pr-1 pl-1 pb-1 pt-1 z-10 bg-white rounded-md shadow-xl border border-black border-opacity-10 absolute z-50 bg-opacity-75 hidden group-hover:block transition-all delay-200 opacity-0 group-hover:opacity-100 backdrop-blur">
               <ul>
                 <li className="whitespace-nowrap rounded-md pl-2 pr-2 hover:bg-[#007AFF] hover:text-white">
                   <a
@@ -131,7 +131,7 @@ export default function Navbar({ isLock = false }) {
             <button className="pt-1 pb-1 pl-1 pr-1">
               <p>View</p>
             </button>
-            <div className="bg-white min-w-[100px] w-auto h-auto pr-1 pl-1 pb-1 pt-1 z-10 bg-white rounded-md shadow-xl border border-black border-opacity-10 absolute z-50 bg-opacity-75 hidden group-hover:block transition-all delay-200 opacity-0 group-hover:opacity-100 backdrop-blur">
+            <div className="min-w-[100px] w-auto h-auto pr-1 pl-1 pb-1 pt-1 bg-white rounded-md shadow-xl border border-black border-opacity-10 absolute z-50 bg-opacity-75 hidden group-hover:block transition-all delay-200 opacity-0 group-hover:opacity-100 backdrop-blur">
               <ul>
                 <li className="whitespace-nowrap rounded-md pl-2 pr-2 hover:bg-[#007AFF] hover:text-white">
                   뭐하지...
@@ -144,7 +144,7 @@ export default function Navbar({ isLock = false }) {
             <button className="pt-1 pb-1 pl-1 pr-1">
               <p>Go</p>
             </button>
-            <div className="bg-white min-w-[100px] w-auto h-auto pr-1 pl-1 pb-1 pt-1 z-10 bg-white rounded-md shadow-xl border border-black border-opacity-10 absolute z-50 bg-opacity-75 hidden group-hover:block transition-all delay-200 opacity-0 group-hover:opacity-100 backdrop-blur">
+            <div className="min-w-[100px] w-auto h-auto pr-1 pl-1 pb-1 pt-1 bg-white rounded-md shadow-xl border border-black border-opacity-10 absolute z-50 bg-opacity-75 hidden group-hover:block transition-all delay-200 opacity-0 group-hover:opacity-100 backdrop-blur">
               <ul className="border-b border-gray-300 pb-1">
                 <li className="whitespace-nowrap rounded-md pl-2 pr-2 hover:bg-[#007AFF] hover:text-white">
                   <a
@@ -196,7 +196,7 @@ export default function Navbar({ isLock = false }) {
             <button className="pt-1 pb-1 pl-1 pr-1">
               <p>Window</p>
             </button>
-            <div className="bg-white min-w-[100px] w-auto h-auto pr-1 pl-1 pb-1 pt-1 z-10 bg-white rounded-md shadow-xl border border-black border-opacity-10 absolute z-50 bg-opacity-75 hidden group-hover:block transition-all delay-200 opacity-0 group-hover:opacity-100 backdrop-blur">
+            <div className="bg-white min-w-[100px] w-auto h-auto pr-1 pl-1 pb-1 pt-1 rounded-md shadow-xl border border-black border-opacity-10 absolute z-50 bg-opacity-75 hidden group-hover:block transition-all delay-200 opacity-0 group-hover:opacity-100 backdrop-blur">
               <ul>
                 <li className="whitespace-nowrap rounded-md pl-2 pr-2 hover:bg-[#007AFF] hover:text-white">
                   뭐하남...
@@ -209,7 +209,7 @@ export default function Navbar({ isLock = false }) {
             <button className="pt-1 pb-1 pl-1 pr-1">
               <p>Help</p>
             </button>
-            <div className="bg-white min-w-[100px] w-auto h-auto pr-1 pl-1 pb-1 pt-1 z-10 bg-white rounded-md shadow-xl border border-black border-opacity-10 absolute z-50 bg-opacity-75 hidden group-hover:block transition-all delay-200 opacity-0 group-hover:opacity-100 backdrop-blur">
+            <div className="bg-white min-w-[100px] w-auto h-auto pr-1 pl-1 pb-1 pt-1 rounded-md shadow-xl border border-black border-opacity-10 absolute z-50 bg-opacity-75 hidden group-hover:block transition-all delay-200 opacity-0 group-hover:opacity-100 backdrop-blur">
               <ul>
                 <li className="whitespace-nowrap rounded-md pl-2 pr-2 hover:bg-[#007AFF] hover:text-white">
                   도움말
