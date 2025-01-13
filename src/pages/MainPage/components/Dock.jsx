@@ -6,7 +6,9 @@ import maverick from "../../../shared/assets/maverick.png";
 import elephant from "../../../shared/assets/elephant.png";
 import terminal from "../../../shared/assets/terminalIcon.png";
 import linkedInIcon from "../../../shared/assets/mjy/linkedInLogo.png";
-import sample from "../../../shared/assets/sample-icon.png";
+import heeseong from '../../../shared/assets/heeseong.png';
+import pokemon from '../../../shared/assets/pokemon.png';
+import photos from '../../../shared/assets/photos.png';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -14,11 +16,13 @@ const DOCK_LIST = {
   SAFARI: { image: safariIcon, label: "사파리", path: "/safari" },
   MAP: { image: mapIcon, label: "지도", path: "/maps" },
   DICTIONARY: { image: dictionaryIcon, label: "영어사전", path: "/dictionary" },
+  PHOTOS: { image: photos, label: "사진", path: "/photos" },
+  POKEMON: { image: pokemon, label: "포켓몬도감", path: "/pokemon" },
   SJH: { image: maverick, label: "신진호", path: "/sjh" },
   KMH: { image: elephant, label: "김민희", path: "/kmh" },
   KSW: { image: terminal, label: "김승우", path: "/ksw" },
   MJY: { image: linkedInIcon, label: "민지영", path: "/mjy" },
-  KHS: { image: sample, label: "김희성", path: "/khs" },
+  KHS: { image: heeseong, label: "김희성", path: "/khs" },
 };
 
 export default function Dock({ isOpenWindow, setIsOpenWindow }) {

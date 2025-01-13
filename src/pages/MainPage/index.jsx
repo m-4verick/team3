@@ -15,6 +15,8 @@ import KimSeungWooPage from "../../pages/KimSeungWooPage";
 import MinJiYoungPage from "../../pages/MinJiYeongPage";
 import KimHeeSeongPage from "../../pages/KimHeeSeongPage";
 import { useState } from "react";
+import PokemonPage from "../basic-apps/pokemon/PokemonPage.jsx";
+import Photos from "../basic-apps/PhotosPage/Photos.jsx";
 
 export default function MainPage() {
   const [isOpenWindow, setIsOpenWindow] = useState(false);
@@ -33,11 +35,13 @@ export default function MainPage() {
               <Route path="/safari" element={<SafariPage />} />
               <Route path="/maps" element={<MapPage />} />
               <Route path="/dictionary" element={<DictionaryPage />} />
+              <Route path="/photos" element={<Photos />} />
               <Route path="/sjh" element={<ShinJinHoPage />} />
               <Route path="/kmh" element={<KimMinHeePage />} />
               <Route path="/ksw" element={<KimSeungWooPage />} />
               <Route path="/mjy" element={<MinJiYoungPage />} />
               <Route path="/khs/*" element={<KimHeeSeongPage />} />
+              <Route path="/pokemon" element={<PokemonPage />} />
             </Routes>
           </Window>
 

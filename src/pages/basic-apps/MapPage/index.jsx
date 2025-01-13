@@ -9,7 +9,7 @@ export default function MapPage() {
       <MapDiv
         style={{
           width: "100%",
-          height: "500px",
+          height: "550px",
         }}
       >
         <MyMap />
