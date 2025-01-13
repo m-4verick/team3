@@ -6,7 +6,7 @@ import maverick from "../../../shared/assets/maverick.png";
 import elephant from "../../../shared/assets/elephant.png";
 import terminal from "../../../shared/assets/terminalIcon.png";
 import linkedInIcon from "../../../shared/assets/mjy/linkedInLogo.png";
-import sample from "../../../shared/assets/sample-icon.png";
+import Dote from "../../../shared/assets/dote.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -18,7 +18,7 @@ const DOCK_LIST = {
   KMH: { image: elephant, label: "김민희", path: "/kmh" },
   KSW: { image: terminal, label: "김승우", path: "/ksw" },
   MJY: { image: linkedInIcon, label: "민지영", path: "/mjy" },
-  KHS: { image: sample, label: "김희성", path: "/khs" },
+  KHS: { image: Dote, label: "김희성", path: "/khs" },
 };
 
 export default function Dock({ isOpenWindow, setIsOpenWindow }) {

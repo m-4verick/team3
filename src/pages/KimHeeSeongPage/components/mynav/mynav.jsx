@@ -11,11 +11,19 @@ export function MyNav() {
       >
         소개
       </button>
+
       <button
         onClick={() => nav("/khs/Status")}
         className="px-4 py-2 bg-emerald-300 text-white rounded hover:bg-emerald-400"
       >
         상태
+      </button>
+
+      <button
+        onClick={() => nav("/khs/Healing")}
+        className="px-4 py-2 bg-amber-300 text-white rounded hover:bg-amber-400"
+      >
+        힐링
       </button>
     </div>
   );
