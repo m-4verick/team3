@@ -53,12 +53,14 @@ export function IntroduceSelf() {
             <img className="w-60 rounded-lg" src={F} />
           </div>
 
-          <div className="flex items-center   border-solid border-2 border-stone-300/[.50] rounded-lg gap-11">
-            <div className="flex flex-col text-center pl-16 pt-16 pb-16">
+          <div className="flex items-center   border-solid border-2 border-stone-300/[.50] rounded-lg gap-16">
+            <div className="flex flex-col text-center pl-24 pt-16 pb-16">
               <p className="text-xl">"이대로 진행시켜"</p>
               <hr className="mt-2 mb-2" />
               <p className="whitespace-nowrap">
-                주입식 T친구 교육으로 아직 감성적이다.
+                계획이 없다면 나는 미칠것이다,
+                <br />
+                고로 계획부터 세우고 보자.
               </p>
             </div>
             <img className="w-64 rounded-lg" src={GO} />

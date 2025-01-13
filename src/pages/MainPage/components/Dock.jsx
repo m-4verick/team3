@@ -6,6 +6,7 @@ import maverick from "../../../shared/assets/maverick.png";
 import elephant from "../../../shared/assets/elephant.png";
 import terminal from "../../../shared/assets/terminalIcon.png";
 import linkedInIcon from "../../../shared/assets/mjy/linkedInLogo.png";
+import Dote from "../../../shared/assets/dote.png";
 import heeseong from '../../../shared/assets/heeseong.png';
 import pokemon from '../../../shared/assets/pokemon.png';
 import photos from '../../../shared/assets/photos.png';
@@ -22,8 +23,8 @@ const DOCK_LIST = {
   KMH: { image: elephant, label: "김민희", path: "/kmh" },
   KSW: { image: terminal, label: "김승우", path: "/ksw" },
   MJY: { image: linkedInIcon, label: "민지영", path: "/mjy" },
+  KHS: { image: Dote, label: "김희성", path: "/khs" },
   KHS: { image: heeseong, label: "김희성", path: "/khs" },
-};
 
 export default function Dock({ isOpenWindow, setIsOpenWindow }) {
   const [activeKey, setActiveKey] = useState(null);
