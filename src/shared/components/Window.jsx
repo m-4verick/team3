@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const getBgColor = (pathname) => {
   switch (pathname) {
@@ -19,9 +19,11 @@ export default function Window({ children, isOpenWindow, setIsOpenWindow }) {
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const windowRef = useRef(null);
   const bgColor = getBgColor(location.pathname);
+  const navigate = useNavigate();
 
   const handleClose = () => {
     setIsOpenWindow(false);
+    navigate("/");
   };
 
   const handleMouseDown = (e) => {
