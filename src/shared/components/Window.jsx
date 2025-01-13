@@ -12,9 +12,8 @@ const getBgColor = (pathname) => {
   }
 };
 
-export default function Window({ children }) {
+export default function Window({ children, isOpenWindow, setIsOpenWindow }) {
   const location = useLocation();
-  const [isVisible, setIsVisible] = useState(true);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
@@ -22,7 +21,7 @@ export default function Window({ children }) {
   const bgColor = getBgColor(location.pathname);
 
   const handleClose = () => {
-    setIsVisible(false);
+    setIsOpenWindow(false);
   };
 
   const handleMouseDown = (e) => {
@@ -68,7 +67,7 @@ export default function Window({ children }) {
       const centerY = window.innerHeight / 2 - rect.height / 2 - 30;
       setPosition({ x: centerX, y: centerY });
     }
-  }, []);
+  }, [isOpenWindow]);
 
   useEffect(() => {
     if (isDragging) {
@@ -84,7 +83,7 @@ export default function Window({ children }) {
     };
   }, [isDragging]);
 
-  if (!isVisible) return null;
+  if (!isOpenWindow) return null;
 
   return (
     <div
