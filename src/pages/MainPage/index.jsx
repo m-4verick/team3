@@ -29,7 +29,7 @@ export default function MainPage() {
           <Navbar />
           <Window isOpenWindow={isOpenWindow} setIsOpenWindow={setIsOpenWindow}>
             <Routes>
-              <Route path="/" element={<MapPage />} />
+              <Route path="/" element={<></>} />
               <Route path="/safari" element={<SafariPage />} />
               <Route path="/maps" element={<MapPage />} />
               <Route path="/dictionary" element={<DictionaryPage />} />
