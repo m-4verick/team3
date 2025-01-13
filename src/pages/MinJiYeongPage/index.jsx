@@ -54,7 +54,7 @@ export default function MinJiYeongPage() {
         <ProfileBox title="학력">
           <main className="flex flex-col gap-[16px]">
             {educationHistory.map((history, index) => (
-              <ProfileItem key={index} history={history} />
+              <ProfileItem key={index} history={history} isIcon={true} />
             ))}
           </main>
         </ProfileBox>
