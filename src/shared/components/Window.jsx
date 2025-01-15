@@ -30,6 +30,8 @@ export default function Window({ children, isOpenWindow, setIsOpenWindow }) {
 
     // 박스의 현재 위치와 마우스 클릭 위치의 차이를 계산
     const windowRect = windowRef.current.getBoundingClientRect();
+    // event.clientX: 뷰포트 내 마우스 클릭의 X 좌표
+    // windowRect.left: 윈도우의 왼쪽 모서리 X 좌표
     offsetRef.current = {
       x: event.clientX - windowRect.left,
       y: event.clientY - windowRect.top,
@@ -46,6 +48,8 @@ export default function Window({ children, isOpenWindow, setIsOpenWindow }) {
           const minTop = 28; // 상단으로부터 28px offset
 
           // offsetRef.current를 사용하여 window의 위치를 업데이트
+          // moveEvent.clientX: 현재 마우스 위치의 X 좌표
+          // offsetRef.current.x: 초기 클릭 시 윈도우 내부 오프셋
           let newLeft = moveEvent.clientX - offsetRef.current.x;
           let newTop = moveEvent.clientY - offsetRef.current.y;
 
