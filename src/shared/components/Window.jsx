@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { fromEvent } from "rxjs";
-import { takeUntil } from "rxjs/operators";
+import { fromEvent, takeUntil, finalize } from "rxjs";
 
 const getBgColor = (pathname) => {
   switch (pathname) {
@@ -42,7 +41,10 @@ export default function Window({ children, isOpenWindow, setIsOpenWindow }) {
 
     // 드래그 시작 시 mouseMove 이벤트를 구독하고 mouseUp 이벤트가 발생할 때까지 계속
     mouseMove$
-      .pipe(takeUntil(mouseUp$)) // mouseUp 이벤트가 발생하면 구독 종료
+      .pipe(
+        takeUntil(mouseUp$), // mouseUp 이벤트가 발생하면 구독 종료
+        finalize(() => setIsDragging(false)) // 마지막에 드래그 종료 시 isDragging을 false로 설정
+      )
       .subscribe((moveEvent) => {
         if (windowRef.current) {
           const minTop = 28; // 상단으로부터 28px offset
@@ -60,10 +62,6 @@ export default function Window({ children, isOpenWindow, setIsOpenWindow }) {
           windowRef.current.style.top = `${newTop}px`;
         }
       });
-
-    mouseUp$.subscribe(() => {
-      setIsDragging(false); // 마우스 업 이벤트 시 isDragging을 false로 설정
-    });
   };
 
   const handleClose = () => {
