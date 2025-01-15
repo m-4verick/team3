@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { fromEvent } from "rxjs";
+import { takeUntil } from "rxjs/operators";
 
 const getBgColor = (pathname) => {
   switch (pathname) {
@@ -13,52 +15,56 @@ const getBgColor = (pathname) => {
 };
 
 export default function Window({ children, isOpenWindow, setIsOpenWindow }) {
+  const navigate = useNavigate();
   const location = useLocation();
+  const bgColor = getBgColor(location.pathname);
+
+  const windowRef = useRef(null);
+  const offsetRef = useRef({ x: 0, y: 0 });
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
-  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-  const windowRef = useRef(null);
-  const bgColor = getBgColor(location.pathname);
-  const navigate = useNavigate();
+
+  // rxjs를 이용한 관찰자 패턴
+  const handleMouseDown = (event) => {
+    setIsDragging(true); // 드래그 시작 시 isDragging을 true로 설정
+
+    // 박스의 현재 위치와 마우스 클릭 위치의 차이를 계산
+    const windowRect = windowRef.current.getBoundingClientRect();
+    offsetRef.current = {
+      x: event.clientX - windowRect.left,
+      y: event.clientY - windowRect.top,
+    };
+
+    const mouseMove$ = fromEvent(document, "mousemove");
+    const mouseUp$ = fromEvent(document, "mouseup");
+
+    // 드래그 시작 시 mouseMove 이벤트를 구독하고 mouseUp 이벤트가 발생할 때까지 계속
+    mouseMove$
+      .pipe(takeUntil(mouseUp$)) // mouseUp 이벤트가 발생하면 구독 종료
+      .subscribe((moveEvent) => {
+        if (windowRef.current) {
+          const minTop = 28; // 상단으로부터 28px offset
+
+          // offsetRef.current를 사용하여 window의 위치를 업데이트
+          let newLeft = moveEvent.clientX - offsetRef.current.x;
+          let newTop = moveEvent.clientY - offsetRef.current.y;
+
+          // 상단 제한 (30px 아래로 제한)
+          newTop = Math.max(minTop, newTop);
+
+          windowRef.current.style.left = `${newLeft}px`;
+          windowRef.current.style.top = `${newTop}px`;
+        }
+      });
+
+    mouseUp$.subscribe(() => {
+      setIsDragging(false); // 마우스 업 이벤트 시 isDragging을 false로 설정
+    });
+  };
 
   const handleClose = () => {
     setIsOpenWindow(false);
     navigate("/");
-  };
-
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setDragStart({
-      x: e.clientX - position.x,
-      y: e.clientY - position.y,
-    });
-  };
-
-  const handleMouseMove = (e) => {
-    if (isDragging && windowRef) {
-      const parentRect =
-        windowRef.current.parentElement.getBoundingClientRect();
-      const windowRect = windowRef.current.getBoundingClientRect();
-
-      let newX = e.clientX - dragStart.x;
-      let newY = e.clientY - dragStart.y;
-
-      // 마우스 포인터를 부모 요소 내부로 제한
-      if (e.clientX < parentRect.left) newX = 0;
-      if (e.clientX > parentRect.right)
-        newX = parentRect.width - windowRect.width;
-      if (e.clientY < parentRect.top) newY = 0;
-      if (e.clientY > parentRect.bottom)
-        newY = parentRect.height - windowRect.height;
-
-      newY = Math.max(28, newY); // 위쪽 경계만 제한
-
-      setPosition({ x: newX, y: newY });
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
   };
 
   // 초기화면 위치 설정
@@ -70,20 +76,6 @@ export default function Window({ children, isOpenWindow, setIsOpenWindow }) {
       setPosition({ x: centerX, y: centerY });
     }
   }, [isOpenWindow]);
-
-  useEffect(() => {
-    if (isDragging) {
-      document.addEventListener("mousemove", handleMouseMove);
-      document.addEventListener("mouseup", handleMouseUp);
-    } else {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-    }
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-    };
-  }, [isDragging]);
 
   if (!isOpenWindow) return null;
 
